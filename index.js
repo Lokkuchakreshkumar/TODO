@@ -44,7 +44,7 @@ function createTask(task) {
   span.appendChild(delbtn);
   delbtn.addEventListener("click", () => {
     span.remove();
-    getOut(span);
+    getOut(task);
   });
 }
 
