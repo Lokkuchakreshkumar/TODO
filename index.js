@@ -16,7 +16,7 @@ function addTask(event) {
 
 submitbtn.addEventListener("click", addTask);
 function createTask(task) {
-  if(task.trim()!=""){
+  if(task.trim()!==""){
     let li = document.createElement("li");
   li.textContent = task;
   let check = document.createElement("input");
