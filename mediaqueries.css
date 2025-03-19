@@ -1,0 +1,10 @@
+@media screen and (max-width: 660px) {
+  .container {
+    width: 80%;
+    height: 35em;
+  }
+  span {
+    margin-top: 2rem;
+    width: 80%;
+  }
+}

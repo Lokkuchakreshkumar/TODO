@@ -16,6 +16,7 @@ body {
   flex-direction: column;
 }
 .container {
+  margin-top: 2rem;
   background-color: #1e1e1e;
   width: 40rem;
   height: 29rem;
