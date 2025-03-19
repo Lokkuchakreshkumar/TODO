@@ -9,15 +9,18 @@ let check = document.createElement("input");
 function addTask(event) {
   event.preventDefault();
   let task = input.value;
-  createTask(task);
-  addToLocalStorage(task);
+  if (task.trim() != "") {
+    createTask(task);
+    addToLocalStorage(task);
+  } else {
+    return;
+  }
   input.value = "";
 }
 
 submitbtn.addEventListener("click", addTask);
 function createTask(task) {
-  if(task.trim()!==""){
-    let li = document.createElement("li");
+  let li = document.createElement("li");
   li.textContent = task;
   let check = document.createElement("input");
   check.type = "checkbox";
@@ -43,8 +46,8 @@ function createTask(task) {
     span.remove();
     getOut(span);
   });
-  }
 }
+
 function addToLocalStorage(task) {
   savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   savedTasks.push(task);
