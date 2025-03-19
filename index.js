@@ -16,7 +16,8 @@ function addTask(event) {
 
 submitbtn.addEventListener("click", addTask);
 function createTask(task) {
-  let li = document.createElement("li");
+  if(task.trim()!=""){
+    let li = document.createElement("li");
   li.textContent = task;
   let check = document.createElement("input");
   check.type = "checkbox";
@@ -42,6 +43,7 @@ function createTask(task) {
     span.remove();
     getOut(span);
   });
+  }
 }
 function addToLocalStorage(task) {
   savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
