@@ -20,6 +20,7 @@ function createTask(task) {
   li.textContent = task;
   let check = document.createElement("input");
   check.type = "checkbox";
+  check.id = "check";
   let span = document.createElement("span");
   span.appendChild(check);
   span.appendChild(li);
@@ -30,7 +31,7 @@ function createTask(task) {
   check.addEventListener("change", () => {
     if (check.checked) {
       completed = true;
-      li.style.textDecoration = "line-through";
+      li.style.textDecoration = "black line-through";
     } else {
       li.style.textDecoration = "none";
     }
