@@ -7,7 +7,11 @@ const tasks = document.querySelector(".tasks-container");
 let noticed=document.querySelector(".notice-display")
  notice = document.querySelector(".notice");
 getToUi();
-
+let some = getToUi();
+noticed.innerText=`Your have ${some.length} works to do`;
+setTimeout(()=>{
+    notice.remove();
+},10000)
 let check = document.createElement("input");
 function addTask(event) {
   event.preventDefault();
@@ -60,13 +64,11 @@ function addToLocalStorage(task) {
 function getToUi() {
 
   taskToPrint = JSON.parse(localStorage.getItem("tasks")) || [];
-  noticed.innerText=`Your have ${taskToPrint.length} works to do`;
-setTimeout(()=>{
-    notice.remove();
-},10000)
+ 
   taskToPrint.forEach((element) => {
     createTask(element);
   });
+  return taskToPrint;
 }
 function getOut(task) {
   savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
