@@ -6,7 +6,6 @@ body = document.querySelector("body");
 const tasks = document.querySelector(".tasks-container");
 let noticed=document.querySelector(".notice-display")
  notice = document.querySelector(".notice");
-getToUi();
 let some = getToUi();
 noticed.innerText=`Your have ${some.length} works to do`;
 setTimeout(()=>{
