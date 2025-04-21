@@ -15,6 +15,20 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.notice{
+  margin-top: 1rem;
+  width: 60%;
+  height: 3rem;
+  border-radius:0.5rem;
+  background-color:#1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice-display{
+  color: white;
+
+}
 .container {
   margin-top: 2rem;
   background-color: #1e1e1e;

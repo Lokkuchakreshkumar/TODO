@@ -4,7 +4,10 @@ submitbtn.id = "submitbtn";
 input = document.querySelector("input");
 body = document.querySelector("body");
 const tasks = document.querySelector(".tasks-container");
+let noticed=document.querySelector(".notice-display")
+ notice = document.querySelector(".notice");
 getToUi();
+
 let check = document.createElement("input");
 function addTask(event) {
   event.preventDefault();
@@ -51,10 +54,16 @@ function createTask(task) {
 function addToLocalStorage(task) {
   savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   savedTasks.push(task);
+
   localStorage.setItem("tasks", JSON.stringify(savedTasks));
 }
 function getToUi() {
+
   taskToPrint = JSON.parse(localStorage.getItem("tasks")) || [];
+  noticed.innerText=`Your have ${taskToPrint.length} works to do`;
+setTimeout(()=>{
+    notice.remove();
+},10000)
   taskToPrint.forEach((element) => {
     createTask(element);
   });
